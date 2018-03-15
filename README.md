@@ -5,7 +5,7 @@ prototype that enables doctors and pharmacist to view patient's prescription aft
 ### Packages
 
 -  **com.app.demo**
-   * This contains the driver demo.java function to run the project
+   * This contains the Driver class to run the project
 -  **com.app.dao**
    * This contains all the data objects that are used in the this project for
    * organizing and storing the info
