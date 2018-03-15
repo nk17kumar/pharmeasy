@@ -25,6 +25,30 @@ public class PersonalDetails {
 	 * stores the blood group of the user
 	 */
 	private String bloodGroup;
+	
+	/**
+	 * parameterized constructor
+	 * @param name name of the user
+	 * @param age age of the user
+	 * @param gender gender of the user
+	 * @param bloodGroup blood group of the user
+	 * @param emailAddress email address of the user
+	 * @param contactNumber contact number of the user
+	 * @param address mailing address of the user
+	 */
+	public PersonalDetails(String name, int age, String gender, String bloodGroup, String emailAddress,
+			String contactNumber, String address) {
+		super();
+		this.name = name;
+		this.age = age;
+		this.gender = gender;
+		this.bloodGroup = bloodGroup;
+		this.emailAddress = emailAddress;
+		this.contactNumber = contactNumber;
+		this.address = address;
+	}
+
+
 	/**
 	 * stores the email address of the user
 	 */

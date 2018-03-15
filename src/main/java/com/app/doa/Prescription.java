@@ -6,6 +6,8 @@ package com.app.doa;
 import java.util.Date;
 import java.util.List;
 
+import com.app.util.Logger;
+
 /**
  * @author nk17kumar
  *
@@ -20,6 +22,21 @@ public class Prescription {
 	 * Stores the list of medicines in the current prescription
 	 */
 	private List <String> medicines;   
+	/**
+	 * Paramaterized constructor
+	 * @param presDate prescription issuing date
+	 * @param medicines list of medicines prescribed
+	 * @param instructions instructions regarding medicines 
+	 * @param extraInstructions additional instructions
+	 */
+	public Prescription(Date presDate, List<String> medicines, String instructions, String extraInstructions) {
+		super();
+		this.presDate = presDate;
+		this.medicines = medicines;
+		this.instructions = instructions;
+		this.extraInstructions = extraInstructions;
+		Logger.writeLog("creating new Prescription", false);
+	}
 	/**
 	 * Stores instruction regarding the medicines
 	 */
