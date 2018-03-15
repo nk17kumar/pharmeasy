@@ -10,6 +10,7 @@ import java.util.Set;
 
 import javax.management.InvalidAttributeValueException;
 
+import com.app.util.Logger;
 import com.app.util.Utilility;
 
 /**
@@ -48,29 +49,32 @@ public class Patient extends User {
         this.medicalHistory = new HashMap <String,MedicalRecord>();
         this.prescriptionHistory = new HashMap <String,Prescription>();
         this.approvedIds = new HashSet <String>();
+        Logger.writeLog("creating new Patient user", false);
 	}
 	
 	/**
 	 * grants prescription viewing access to user with specific id
 	 * @param requestId user's unique id
 	 */
-	public void approveRequests(String requestId) {
-		if(this.approvedIds.contains(requestId)) {
-			System.err.println("Request Already approved");
+	public void approveRequests(User requestId) {
+		if(this.approvedIds.contains(requestId.getId())) {
+			Logger.writeLog("Request Already approved",true);
 		}
 		else {
-			this.approvedIds.add(requestId);
+			this.approvedIds.add(requestId.getId());
+			Logger.writeLog("Patient " + this.getId() + " is approving request id " + requestId.getId(), false);
 		}
 	}
 	
 	/**
 	 * removes the access of a particular user to access prescription
-	 * @param requestId user id of the user whose access is to be removed
+	 * @param usr user id of the user whose access is to be removed
 	 * @throws InvalidAttributeValueException if the specified user has no access already
 	 */
-	public void removeApprovedRequests(String requestId) throws InvalidAttributeValueException {
-		if(this.approvedIds.contains(requestId)) {
-			this.approvedIds.remove(requestId);
+	public void removeApprovedRequests(User usr) throws InvalidAttributeValueException {
+		if(this.approvedIds.contains(usr.getId())) {
+			this.approvedIds.remove(usr.getId());
+			Logger.writeLog("removing approval grant for " + usr.getId(), false);
 		}
 		else {
 			throw new InvalidAttributeValueException();
@@ -84,6 +88,7 @@ public class Patient extends User {
 	public void addMedicalHistory(MedicalRecord rec) {
 		String nextId = Utilility.getNextSequenceId(Entity.RECORD);
 		this.medicalHistory.put(nextId, rec);
+		Logger.writeLog("new medical history added by " + this.getId(), false);
 	}
 	
 	/**
@@ -124,8 +129,8 @@ public class Patient extends User {
 	 * @param requestId unique id of the user 
 	 * @return true or false if the request id is approved or false vice-versa
 	 */
-	public boolean isApproved(String requestId) {
-		if(this.approvedIds.contains(requestId))
+	public boolean isApproved(User requestId) {
+		if(this.approvedIds.contains(requestId.getId()))
 			return true;
 		else
 			return false;

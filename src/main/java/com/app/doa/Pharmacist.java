@@ -6,6 +6,8 @@ package com.app.doa;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.app.util.Logger;
+
 /**
  * @author nk17kumar
  *
@@ -45,6 +47,7 @@ public class Pharmacist extends User  {
 		super(Entity.PHARMACIST,info);
 		this.setSpeclization(spec);
 		this.setMedicineStore(new HashMap <String,Integer>());
+		Logger.writeLog("creating new Pharmacist user", false);
 	}
 
 	/**

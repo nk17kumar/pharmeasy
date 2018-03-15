@@ -3,6 +3,8 @@
  */
 package com.app.doa;
 
+import com.app.util.Logger;
+
 /**
  * @author nk17kumar
  *
@@ -22,6 +24,7 @@ public class Doctor extends User  {
 	public Doctor(PersonalDetails info,String spec) {
 		super(Entity.DOCTOR,info);
 		this.setSpecialization(spec);
+		Logger.writeLog("creating new Doctor user", false);
 	}
 
 	/**
@@ -48,6 +51,15 @@ public class Doctor extends User  {
 		builder.append(specialization);
 		builder.append("]");
 		return builder.toString();
+	}
+	
+	/**
+	 * creates prescription and adds to patient  history
+	 * @param p1 patient recieving the prescription
+	 */
+	public void givePrescription(Patient p1,Prescription p) {
+		p1.addPrescriptionHistory(p);
+		Logger.writeLog("Doctor "+ this.getId() + " is giving prescription to " + p1.getId(), false);
 	}
 
 
