@@ -4,8 +4,8 @@
 package com.app.util;
 
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 
@@ -24,14 +24,14 @@ public class Logger {
 	/**
 	 * Buffer linked to the log file
 	 */
-	private static FileWriter fin;
+	private static PrintStream fin;
 	
 	/**
 	 * Constructor
 	 */
 	public Logger() {
 		try {
-			fin = new FileWriter(new File("src/main/resources/log.txt"));
+			fin = new PrintStream(new File("src/main/resources/log.txt"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -44,14 +44,10 @@ public class Logger {
 	public static void writeLog(String str,boolean error) {
 		String header = " [PROCESS] ";
 		if(error == true) {
-			header = " [ERROR] ";
+			header = " [ERROR]   ";
 		}
 		timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date(System.currentTimeMillis()));
-		try {
-			fin.write(timeStamp + header + str+ "\n");
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		fin.println(timeStamp + header + str);
 	}
 	
 
