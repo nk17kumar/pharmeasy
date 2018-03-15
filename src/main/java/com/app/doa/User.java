@@ -60,7 +60,7 @@ public abstract class User {
 		
 		Patient tmp = (Patient)patient;
 		
-		if(tmp.isApproved(this.getId())) {
+		if(tmp.isApproved(this)) {
 			Logger.writeLog(this.getType() + this.getInfo().getName() + " is accessing prescription",false);
 			return tmp.showRecentPrescription();
 		}
@@ -89,7 +89,7 @@ public abstract class User {
 		
 		Patient tmp = (Patient)patient;
 		
-		if(tmp.isApproved(this.getId())) {
+		if(tmp.isApproved(this)) {
 			Logger.writeLog(this.getType() + this.getInfo().getName() + " is accessing prescription",false);
 			return tmp.showPrescription(prescriptionId);
 		}
