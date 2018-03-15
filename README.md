@@ -6,10 +6,10 @@ prototype that enables doctors and pharmacist to view patient's prescription aft
 
 -  **com.app.demo**
    * This contains the driver demo.java function to run the project
--  **com.warmup.dao**
+-  **com.app.dao**
    * This contains all the data objects that are used in the this project for
    * organizing and storing the info
--  **com.warmup.util**
+-  **com.app.util**
    * This contains the helper java files that provide functionality for executing
    * operations on the doa objects
 
@@ -25,7 +25,7 @@ prototype that enables doctors and pharmacist to view patient's prescription aft
 # Log Reports
  
   All the proesses and the errors are being recorded in the log.txt file located at 
-  > src/resources/log.txt
+  > src/main/resources/log.txt
   
 
   
