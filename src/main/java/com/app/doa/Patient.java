@@ -3,6 +3,7 @@
  */
 package com.app.doa;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -134,6 +135,18 @@ public class Patient extends User {
 			return true;
 		else
 			return false;
+	}
+	
+	/**
+	 * @return Prescription id along with its respective date so that user may
+	 * request to view any selective prescription according to date of prescription 
+	 */
+	public Map <String,Date> displayPrescriptionIds() {
+		Map <String,Date> ret = new HashMap <String,Date>();
+		for(Map.Entry<String,Prescription> entry : this.prescriptionHistory.entrySet()) {
+			ret.put(entry.getKey(), entry.getValue().getPresDate());
+		}
+		return ret;
 	}
 	
 }
