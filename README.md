@@ -12,7 +12,10 @@ prototype that enables doctors and pharmacist to view patient's prescription aft
 -  **com.app.util**
    * This contains the helper java files that provide functionality for executing
    * operations on the doa objects
+   
+### Environment
 
+Make sure the build environment is JavaSE-1.8 and JUnit 4 support enabled to run unit tests
 
 ### How to run
 
@@ -21,6 +24,7 @@ prototype that enables doctors and pharmacist to view patient's prescription aft
 -  Navigate to **com.app.demo** package
 -  Run command
    > java Driver
+-  To execute unit Tests goto **src/test/java/** directory and run the java files as JUnit Test
    
 # Log Reports
  
