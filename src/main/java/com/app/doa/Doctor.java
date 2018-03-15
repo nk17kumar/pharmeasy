@@ -62,5 +62,19 @@ public class Doctor extends User  {
 		Logger.writeLog("Doctor "+ this.getId() + " is giving prescription to " + p1.getId(), false);
 	}
 
-
+	@Override
+	public boolean equals(Object other) {
+		User cur = (User)this;
+		User cmp = (User)other;
+		return cur.equals(other);
+	}
+	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#hashCode(java.lang.Object)
+	 */
+	@Override
+	public int hashCode() {
+		User tmp = this;
+		return tmp.hashCode();
+	}
 }
