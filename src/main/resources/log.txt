@@ -1,0 +1,20 @@
+2018.03.15.22.21.52 [PROCESS] Generating unique id for PATIENT: PATIENT0
+2018.03.15.22.21.52 [PROCESS] creating new Patient user
+2018.03.15.22.21.52 [PROCESS] Generating unique id for DOCTOR: DOCTOR0
+2018.03.15.22.21.52 [PROCESS] creating new Doctor user
+2018.03.15.22.21.52 [PROCESS] Generating unique id for PHARMACIST: PHARMACIST0
+2018.03.15.22.21.52 [PROCESS] creating new Pharmacist user
+2018.03.15.22.21.52 [PROCESS] creating new Prescription
+2018.03.15.22.21.52 [PROCESS] Generating unique id for PRESCCRIPTION: PRESCCRIPTION0
+2018.03.15.22.21.52 [PROCESS] Doctor DOCTOR0 is giving prescription to PATIENT0
+2018.03.15.22.21.52 [PROCESS] creating new Prescription
+2018.03.15.22.21.52 [PROCESS] Generating unique id for PRESCCRIPTION: PRESCCRIPTION1
+2018.03.15.22.21.52 [PROCESS] Doctor DOCTOR0 is giving prescription to PATIENT0
+2018.03.15.22.21.52 [ERROR]   Pharmacist PHARMACIST0 is trying to acccess prescription without approval
+2018.03.15.22.21.52 [PROCESS] Patient PATIENT0 is approving request id PHARMACIST0
+2018.03.15.22.21.52 [PROCESS] PHARMACISTMohan is accessing prescription
+2018.03.15.22.21.52 [ERROR]   Doctor DOCTOR0 is trying to acccess prescription without approval
+2018.03.15.22.21.52 [PROCESS] Patient PATIENT0 is approving request id DOCTOR0
+2018.03.15.22.21.52 [PROCESS] DOCTORRohan is accessing prescription
+2018.03.15.22.21.52 [PROCESS] removing approval grant for PHARMACIST0
+2018.03.15.22.21.52 [PROCESS] removing approval grant for DOCTOR0
